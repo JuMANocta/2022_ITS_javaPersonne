@@ -12,7 +12,7 @@ public class App
         Personne p1 = new Personne();
         Personne p2 = new Personne("DOE", "Jhon", new GregorianCalendar(1983,10,8));
 
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in, "UTF-8");
         System.out.println("Quel est votre nom ? >> ");
         String nom = in.nextLine();
         System.out.println("Quel est votre prenom ? >> ");
@@ -33,5 +33,7 @@ public class App
         p0.affichage(true);
         p1.affichage(true);
         p2.affichage(true);
+
+        System.out.println(Personne.getNbInstance());
     }
 }
