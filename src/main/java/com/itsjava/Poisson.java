@@ -33,4 +33,12 @@ public class Poisson extends EtreVivant {
     public void mourir() {
         System.out.println("Arrrrrgggrrggrr");
     }
+
+    public void executer(){
+        parler();
+        seDeplacer();
+        respirer();
+        dormir();
+        mourir();
+    }
 }

@@ -11,7 +11,7 @@ import lombok.experimental.FieldDefaults;
 
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Personne {
+public class Personne implements Classable{
     @Getter
     String nom;
     @Getter

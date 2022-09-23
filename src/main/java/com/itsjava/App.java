@@ -41,5 +41,7 @@ public class App
 
         System.out.println(Personne.getNbInstance());
 
+        Poisson poisson = new Poisson(20.0, 1.0, "rouge", "espece");
+        poisson.executer();
     }
 }
