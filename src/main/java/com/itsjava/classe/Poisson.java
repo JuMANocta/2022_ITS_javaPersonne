@@ -1,4 +1,4 @@
-package com.itsjava;
+package com.itsjava.classe;
 
 import lombok.*;
 

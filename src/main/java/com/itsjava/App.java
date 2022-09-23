@@ -3,6 +3,8 @@ package com.itsjava;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
+import com.itsjava.classe.*;
+
 public class App 
 {
     public static void main( String[] args ){
@@ -47,6 +49,7 @@ public class App
         p0.compare(p1);
         p0.compare(in);
         p0.compare(c0);
+        p1.compare(c1);
         p0.compare(poisson);
     }
 }

@@ -1,4 +1,4 @@
-package com.itsjava;
+package com.itsjava.classe;
 
 import java.util.GregorianCalendar;
 import java.util.Random;
@@ -29,7 +29,7 @@ public class Personne implements Classable{
     // Constructeur simple généré par lombok
 
     // Constructeur surchargé
-    Personne(String nom, String prenom, GregorianCalendar date_naiss) {
+    public Personne(String nom, String prenom, GregorianCalendar date_naiss) {
         System.out.println("Constructeur surchargé");
         setNom(nom);
         setPrenom(prenom);

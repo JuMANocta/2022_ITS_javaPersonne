@@ -1,4 +1,4 @@
-package com.itsjava;
+package com.itsjava.classe;
 
 public interface Classable {
     static final int INFERIEUR = -1;
