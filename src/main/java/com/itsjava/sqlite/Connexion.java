@@ -6,9 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.itsjava.classe.Personne;
+
 public class Connexion {
 
-    public static void testConnexion(){
+    public static void bdConnexion(Personne p){
         String url = "jdbc:sqlite:bdd.db";
         // try whith ressouces (ferme les objects de connexion)
         try(Connection conn = DriverManager.getConnection(url); Statement stmt = conn.createStatement();){
@@ -18,13 +20,22 @@ public class Connexion {
             Boolean create = stmt.execute(sqlCreate);
             System.out.println(create?"Création BDD":"BDD déjà crée");
 
+            String ajout = "INSERT INTO client (nom, prenom, numPers) VALUES ('" + p.getNom() + "','" + p.getPrenom() + "'," + p.getNumPersonne() + ")";
+            stmt.execute(ajout);
+
+            ResultSet rs = stmt.executeQuery("SELECT * FROM client");
+
+            while(rs.next()){
+                String nom = rs.getString("nom");
+                String prenom = rs.getString("prenom");
+                // TODO Date date_naiss = rs.getString("date_naiss");
+                String numPersonne = rs.getString("numPers");
+                System.out.println(nom + " " + prenom + " " + numPersonne);
+            }
+
         } catch (SQLException e) {
             System.out.println("AU FEUUUUUUUUUU !!!");
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        testConnexion();
     }
 }
