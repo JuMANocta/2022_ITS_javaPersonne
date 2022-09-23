@@ -62,6 +62,16 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+          <!--Identifier la main class du projet-->
+          <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>com.itsjava.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        <!--identifier la main class du projet-->
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
