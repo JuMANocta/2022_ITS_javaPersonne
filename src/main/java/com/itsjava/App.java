@@ -43,5 +43,10 @@ public class App
 
         Poisson poisson = new Poisson(20.0, 1.0, "rouge", "espece");
         poisson.executer();
+
+        p0.compare(p1);
+        p0.compare(in);
+        p0.compare(c0);
+        p0.compare(poisson);
     }
 }

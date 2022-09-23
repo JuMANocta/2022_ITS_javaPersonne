@@ -80,5 +80,22 @@ public class Personne implements Classable{
                         + prenom.substring(1).toLowerCase();
     }
 
+    @Override
+    public int compare(Object o) {
+        Personne p;
+        if(o instanceof Personne){
+            p = (Personne)o;
+        }else{
+            return Classable.ERREUR;
+        }
+        if(getNom().compareTo(p.getNom())<0){
+            return Classable.INFERIEUR;
+        }
+        if(getNom().compareTo(p.getNom())>0){
+            return Classable.SUPERIEUR;
+        }
+        return Classable.EGAL;
+    }
+
 }
 // fin de la class
