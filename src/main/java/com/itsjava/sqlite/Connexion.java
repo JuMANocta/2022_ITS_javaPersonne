@@ -14,6 +14,7 @@ public class Connexion {
         String url = "jdbc:sqlite:bdd.db";
         // try whith ressouces (ferme les objects de connexion)
         try(Connection conn = DriverManager.getConnection(url); Statement stmt = conn.createStatement();){
+            Class.forName("org.sqlite.JDBC");
             System.out.println("La connexion est bien reel !");
 
             String sqlCreate = "CREATE TABLE IF NOT EXISTS client (id_client INTEGER PRIMARY KEY AUTOINCREMENT,nom NVARCHAR(20), prenom NVARCHAR(20), type NCHAR(1), date_naiss DATE, numPers INT(3))";
@@ -33,7 +34,7 @@ public class Connexion {
                 System.out.println(nom + " " + prenom + " " + numPersonne);
             }
 
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             System.out.println("AU FEUUUUUUUUUU !!!");
             e.printStackTrace();
         }
