@@ -1,7 +1,7 @@
 package com.itsjava;
 
 import java.util.GregorianCalendar;
-import java.util.Scanner;
+// import java.util.Scanner;
 
 import com.itsjava.classe.*;
 import com.itsjava.sqlite.Connexion;
@@ -45,11 +45,11 @@ public class App
         Poisson poisson = new Poisson(20.0, 1.0, "rouge", "espece");
         poisson.executer();
 
-        //p0.compare(p1);
+        p0.compare(p1);
         //p0.compare(in);
-        //p0.compare(c0);
-        //p1.compare(c1);
-        //p0.compare(poisson);
+        p0.compare(c0);
+        p1.compare(c1);
+        p0.compare(poisson);
 
         Connexion.bdConnexion(p2);
     }
