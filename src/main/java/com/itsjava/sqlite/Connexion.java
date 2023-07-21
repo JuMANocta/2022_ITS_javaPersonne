@@ -11,7 +11,8 @@ import com.itsjava.classe.Personne;
 public class Connexion {
 
     public static void bdConnexion(Personne p){
-        String url = "JDBC:sqlite::resource:bdd.db";
+        //String url = "JDBC:sqlite::resource:bdd.db";
+        String url = "JDBC:sqlite::memory:";
         // try whith ressouces (ferme les objects de connexion)
         try(Connection conn = DriverManager.getConnection(url); Statement stmt = conn.createStatement();){
             Class.forName("org.sqlite.JDBC");
